@@ -1,240 +1,216 @@
-# 01 Cyber Range Blue Team
+<div align="center">
 
-A downloadable, beginner-to-advanced cyber defense lab for learning blue-team investigation, log review, alert triage, detection engineering, and incident reporting in a safe local environment.
+# 🛡️ 01 Cyber Range Blue Team
 
-This project is built for **authorized local lab training only**. It uses **sample logs, simulated security events, and harmless containers**. It does not contain malware, credential theft tooling, persistence tooling, exploitation tooling, or instructions for attacking real systems.
+### Beginner-to-advanced blue-team cyber defense lab for local, authorized training.
 
----
+![Blue Team](https://img.shields.io/badge/Focus-Blue%20Team-0ea5e9?style=for-the-badge)
+![Docker](https://img.shields.io/badge/Lab-Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
+![Python](https://img.shields.io/badge/Detections-Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![Sigma](https://img.shields.io/badge/Rules-Sigma%20Style-purple?style=for-the-badge)
+![Safe](https://img.shields.io/badge/Safety-Local%20Lab%20Only-22c55e?style=for-the-badge)
 
-## Project Overview
+[🚀 Quick Start](#-quick-start) • [🧪 Labs](#-hands-on-labs) • [📊 Detections](#-detection-engineering) • [📝 Capstone](#-final-capstone) • [📁 Structure](#-project-structure)
 
-`01-cyber-range-blue-team` is a self-contained cyber defense range designed to teach practical security operations skills through progressively harder labs.
-
-The range includes:
-
-- Docker-based local lab environment
-- Simulated web service that produces training logs
-- Log generator for fake Linux, authentication, web, process, network, and file-integrity events
-- Defensive monitoring container that reads logs and emits alerts
-- Dashboard placeholder for future visualization
-- Sample logs for offline practice without Docker
-- Sigma-style detection examples
-- Python detection scripts
-- Bash one-liner examples
-- Incident response report template
-- Final capstone investigation
+</div>
 
 ---
 
-## Skills Learned
+## 📌 Project Overview
 
-By completing this project, learners practice:
+`01-cyber-range-blue-team` is a self-contained cyber defense training range for learning log analysis, alert triage, detection engineering, timeline building, and incident response reporting.
 
-- Linux log review
-- Authentication failure analysis
-- Web access log analysis
-- Suspicious process review
-- Brute-force pattern recognition
-- File integrity monitoring concepts
-- Network connection review
-- Incident timeline creation
-- Alert triage and severity scoring
-- Detection logic development
-- Writing incident response reports
-- Communicating findings professionally
+> This project uses sample logs and harmless simulated events only. It does not include malware, credential theft, persistence tooling, exploit code, or instructions for attacking real systems.
 
 ---
 
-## Difficulty Levels
+## 🎯 Mission Flow
 
-| Level | Labs | Focus |
+```mermaid
+flowchart LR
+    A[Collect Logs] --> B[Detect Suspicious Activity]
+    B --> C[Triage Alerts]
+    C --> D[Build Timeline]
+    D --> E[Write Incident Report]
+    E --> F[Capstone Complete]
+```
+
+---
+
+## 🧠 Skills Learned
+
+| Skill Area | What You Practice |
+|---|---|
+| Linux Log Review | Read auth, syslog, and service logs |
+| Failed Login Detection | Identify repeated authentication failures |
+| Web Log Analysis | Review suspicious paths, status codes, and source activity |
+| Detection Engineering | Build Sigma-style rules, Python scripts, Bash one-liners, and JSON alerts |
+| Alert Triage | Prioritize events by severity, confidence, and scope |
+| Incident Response | Build timelines and write professional reports |
+
+---
+
+## 🧭 Difficulty Levels
+
+| Level | Marker | Description |
 |---|---:|---|
-| Beginner | 01-03 | Reading logs, identifying basic indicators, understanding fields |
-| Intermediate | 04-07 | Correlating events, recognizing patterns, using detections |
-| Advanced | 08-10 | Building timelines, triaging alerts, completing a capstone investigation |
+| Beginner | 🟢 | Guided log review and simple detections |
+| Intermediate | 🟡 | Pattern recognition, correlation, and alert triage |
+| Advanced | 🔴 | Multi-source investigation and final report writing |
 
 ---
 
-## Repository Structure
+## 🖼️ Screenshots Placeholder
+
+| Dashboard | Alerts | Timeline |
+|---|---|---|
+| `assets/screenshots/dashboard.png` | `assets/screenshots/alerts.png` | `assets/screenshots/timeline.png` |
+| Add screenshot | Add screenshot | Add screenshot |
+
+---
+
+## 🚀 Quick Start
+
+```powershell
+git clone https://github.com/m4ckDev/01-cyber-range-blue-team.git
+cd 01-cyber-range-blue-team
+docker compose -f .\docker\docker-compose.yml up --build -d
+python .\scripts\run_all_detections.py
+```
+
+Stop the lab:
+
+```powershell
+docker compose -f .\docker\docker-compose.yml down
+```
+
+---
+
+## 📁 Project Structure
 
 ```text
 01-cyber-range-blue-team/
-├── README.md
-├── LEARNING_PATH.md
-├── REPORT_TEMPLATE.md
-├── docker/
-│   ├── docker-compose.yml
-│   ├── dashboard/
-│   ├── log-generator/
-│   ├── monitor/
-│   └── web-service/
-├── docs/
-├── labs/
-├── scripts/
+├── assets/
 ├── detections/
 │   ├── bash/
 │   ├── json-alerts/
 │   ├── python/
 │   └── sigma/
-├── sample-logs/
+├── docker/
+├── docs/
+├── labs/
 ├── reports/
-└── assets/
+├── sample-logs/
+├── scripts/
+├── LEARNING_PATH.md
+├── README.md
+├── REPORT_TEMPLATE.md
+└── SECURITY.md
 ```
 
 ---
 
-## Docker-Based Lab Components
+## 🧪 Hands-On Labs
 
-| Component | Purpose | Safety Note |
+| # | Lab | Difficulty | Outcome |
+|---:|---|---|---|
+| 01 | Linux Log Review | 🟢 | Understand common Linux security logs |
+| 02 | Failed Login Detection | 🟢 | Detect repeated login failures |
+| 03 | Suspicious Process Detection | 🟡 | Identify unusual process activity |
+| 04 | Web Attack Log Analysis | 🟡 | Review suspicious web requests |
+| 05 | Brute-Force Pattern Recognition | 🟡 | Recognize repeated access attempts |
+| 06 | File Integrity Monitoring | 🟡 | Compare baselines and changed files |
+| 07 | Network Connection Review | 🟡 | Review simulated connection logs |
+| 08 | Incident Timeline Building | 🔴 | Build a chronological event timeline |
+| 09 | Alert Triage | 🔴 | Prioritize and classify alerts |
+| 10 | Final Capstone Investigation | 🔴 | Complete a full incident report |
+
+---
+
+## 📊 Detection Engineering
+
+| Detection Type | Location | Purpose |
 |---|---|---|
-| `web-service` | Harmless simulated web service that writes web-style logs | No real exploitation logic |
-| `log-generator` | Creates fake auth, process, network, web, and FIM logs | Sample telemetry only |
-| `monitor` | Reads local logs and creates JSON alerts | Defensive detection only |
-| `dashboard` | Static placeholder dashboard | No external connections required |
+| Sigma-style rules | `detections/sigma/` | Portable detection logic examples |
+| Python scripts | `detections/python/` | Simple parsing and alert generation |
+| Bash one-liners | `detections/bash/` | Quick command-line analysis |
+| JSON alerts | `detections/json-alerts/` | Example SOC-style alert output |
 
 ---
 
-## Install Instructions
+## 📝 Final Capstone
 
-### Requirements
+The capstone requires the student to investigate simulated logs, identify what happened, build a timeline, classify alerts, and complete an incident response report.
 
-- Git
-- Docker Desktop or Docker Engine
-- Docker Compose v2
-- Python 3.10+ for running detection scripts outside Docker
-- PowerShell 7+ recommended on Windows, macOS, or Linux
-
-### Clone the Repository
-
-```powershell
-git clone https://github.com/YOUR-USERNAME/01-cyber-range-blue-team.git
-cd 01-cyber-range-blue-team
-```
-
-### Start the Docker Lab
-
-```powershell
-docker compose -f docker/docker-compose.yml up --build
-```
-
-### Open the Local Services
-
-| Service | URL |
+| Deliverable | File |
 |---|---|
-| Simulated web service | `http://localhost:8080` |
-| Dashboard placeholder | `http://localhost:8088` |
-
-### Stop the Lab
-
-```powershell
-docker compose -f docker/docker-compose.yml down
-```
-
-### Run Detection Scripts Locally
-
-```powershell
-python .\scripts\run_all_detections.py
-```
-
-### Run with Helper Scripts
-
-```powershell
-.\scripts\start-lab.ps1
-.\scripts\run-detections.ps1
-.\scripts\stop-lab.ps1
-```
+| Investigation notes | `reports/capstone-notes.md` |
+| Incident timeline | `reports/capstone-timeline.md` |
+| Final report | `reports/final-incident-report.md` |
+| Report template | `REPORT_TEMPLATE.md` |
 
 ---
 
-## Screenshots Placeholder
+## ✅ Lab Completion Checklist
 
-Add screenshots after running the lab:
-
-| Screenshot | Description | Path |
-|---|---|---|
-| Dashboard Home | Static defensive dashboard view | `assets/screenshots/dashboard-home.png` |
-| Web Service | Simulated service landing page | `assets/screenshots/web-service.png` |
-| Monitor Output | Defensive alerts in terminal | `assets/screenshots/monitor-output.png` |
-| Capstone Report | Completed incident report | `assets/screenshots/capstone-report.png` |
-
----
-
-## Hands-On Labs
-
-| Lab | Title | Primary Skill |
-|---:|---|---|
-| 01 | Linux Log Review | Reading log format and extracting fields |
-| 02 | Failed Login Detection | Authentication review |
-| 03 | Suspicious Process Detection | Process event analysis |
-| 04 | Web Attack Log Analysis | Web log investigation |
-| 05 | Brute-Force Pattern Recognition | Pattern and threshold detection |
-| 06 | File Integrity Monitoring | Change review and file event triage |
-| 07 | Network Connection Review | Connection and destination review |
-| 08 | Incident Timeline Building | Correlation and ordering |
-| 09 | Alert Triage | Prioritization and severity scoring |
-| 10 | Final Capstone Investigation | Full investigation and reporting |
-
-Start here:
-
-```powershell
-Get-ChildItem .\labs\*.md | Sort-Object Name
-```
+- [ ] Lab 01 complete
+- [ ] Lab 02 complete
+- [ ] Lab 03 complete
+- [ ] Lab 04 complete
+- [ ] Lab 05 complete
+- [ ] Lab 06 complete
+- [ ] Lab 07 complete
+- [ ] Lab 08 complete
+- [ ] Lab 09 complete
+- [ ] Lab 10 complete
+- [ ] Final incident report written
+- [ ] Detection outputs reviewed
+- [ ] Lessons learned documented
 
 ---
 
-## Lab Completion Checklist
+## 🧩 Expandable Lab Menu
 
-Use this checklist to track progress.
+<details>
+<summary><strong>🟢 Beginner Labs</strong></summary>
 
-- [ ] Read `docs/local-only-safety.md`
-- [ ] Start the Docker lab
-- [ ] Open the dashboard placeholder
-- [ ] Review all files in `sample-logs/`
-- [ ] Complete Lab 01: Linux Log Review
-- [ ] Complete Lab 02: Failed Login Detection
-- [ ] Complete Lab 03: Suspicious Process Detection
-- [ ] Complete Lab 04: Web Attack Log Analysis
-- [ ] Complete Lab 05: Brute-Force Pattern Recognition
-- [ ] Complete Lab 06: File Integrity Monitoring
-- [ ] Complete Lab 07: Network Connection Review
-- [ ] Complete Lab 08: Incident Timeline Building
-- [ ] Complete Lab 09: Alert Triage
-- [ ] Complete Lab 10: Final Capstone Investigation
-- [ ] Run every Python detection script
-- [ ] Review Sigma-style rules
-- [ ] Use Bash one-liners against sample logs
-- [ ] Complete `REPORT_TEMPLATE.md`
-- [ ] Save the finished report in `reports/`
+- Lab 01: Linux Log Review
+- Lab 02: Failed Login Detection
 
----
+</details>
 
-## Learning Outcomes
+<details>
+<summary><strong>🟡 Intermediate Labs</strong></summary>
 
-After completing the range, students should be able to:
+- Lab 03: Suspicious Process Detection
+- Lab 04: Web Attack Log Analysis
+- Lab 05: Brute-Force Pattern Recognition
+- Lab 06: File Integrity Monitoring
+- Lab 07: Network Connection Review
 
-1. Explain the purpose of common Linux and web logs.
-2. Identify failed login spikes and brute-force-like patterns in sample data.
-3. Recognize suspicious process and file-change events in training logs.
-4. Convert suspicious observations into structured alerts.
-5. Correlate multiple log sources into a timeline.
-6. Triage alerts based on severity, confidence, and evidence.
-7. Write a clear incident report with scope, timeline, findings, and recommendations.
-8. Understand how detection rules, scripts, and analyst judgment support each other.
+</details>
+
+<details>
+<summary><strong>🔴 Advanced Labs</strong></summary>
+
+- Lab 08: Incident Timeline Building
+- Lab 09: Alert Triage
+- Lab 10: Final Capstone Investigation
+
+</details>
 
 ---
 
-## Safety and Legal Disclaimer
+## 🛡️ Authorized Use Disclaimer
 
-This repository is for **authorized local lab training only**. It contains simulated logs and benign defensive training code. Do not use this project to attack, scan, disrupt, or access systems that you do not own or do not have explicit written permission to test.
+This project is for authorized local lab training only. Do not use this project, its examples, or its techniques against systems you do not own or do not have explicit permission to test.
 
-The project does **not** include real malware, credential theft, persistence mechanisms, destructive payloads, or instructions for attacking real systems.
+This repository contains simulated logs, defensive examples, and safe local training material only.
 
----
+<div align="center">
 
-## Suggested Next Improvements
+![Completed](https://img.shields.io/badge/Status-Training%20Ready-success?style=for-the-badge)
+![SOC](https://img.shields.io/badge/Skill-SOC%20Foundations-blueviolet?style=for-the-badge)
+![IR](https://img.shields.io/badge/Practice-Incident%20Response-orange?style=for-the-badge)
 
-- Add real dashboard panels later using Grafana, OpenSearch, or another local-only SIEM stack.
-- Add unit tests for detection scripts.
-- Add more sample logs for Windows Event Log-style analysis.
-- Add scoring for lab answers.
-- Add a release package for classrooms or team training.
+</div>
